@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <ScrollView android:id="@+id/scroll" android:layout_width="fill_parent" android:layout_height="wrap_content" android:scrollbars="none">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    <EditText
+        android:layout_marginTop="30dp"
+        android:id="@+id/taskName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:hint="Enter task name"/>
+
+    <LinearLayout
+        android:id="@+id/calendar"
+        android:layout_below="@+id/taskName"
+        android:layout_marginBottom="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_access_time_black_24dp"/>
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:id="@+id/taskDueDate"
+            android:layout_gravity="bottom"
+            android:layout_width="wrap_content"
+            android:onClick="setDate"
+            android:text="Set Date"
+            android:textSize="18dp"
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <TextView
+            android:id="@+id/taskDueTime"
+            android:layout_marginLeft="15dp"
+            android:layout_width="wrap_content"
+            android:onClick="setTime"
+            android:textSize="18dp"
+            android:layout_gravity="bottom"
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <TextView
+            android:layout_marginLeft="15dp"
+            android:id="@+id/taskDays"
+            android:layout_gravity="bottom"
+            android:layout_width="wrap_content"
+            android:onClick="setDate"
+            android:text=""
+            android:textSize="18dp"
+            android:layout_height="wrap_content">
+        </TextView>
+
+    </LinearLayout>
+
+    <View
+        android:layout_below="@id/calendar"
+        android:background="@color/lightGrey"
+        android:layout_width = "match_parent"
+        android:layout_height="1dp"/>
+
+    <TextView
+        android:id="@+id/taskDueTotalLabel"
+        android:layout_below="@id/calendar"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="55dp"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:text="It'll take..."
+        android:textSize="18dp"
+        android:layout_height="wrap_content">
+    </TextView>
+
+    <TextView
+        android:layout_below="@id/calendar"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="125dp"
+        android:layout_width="wrap_content"
+        android:text="total hours"
+        android:textSize="18dp"
+        android:layout_height="wrap_content">
+    </TextView>
+
+    <android:NumberPicker
+        android:layout_below="@id/calendar"
+        android:id="@+id/totalHours"
+        android:text="Days before"
+        android:layout_width="wrap_content"
+        android:layout_height = "150dp"
+        android:layout_marginLeft="55dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop = "40dp">
+    </android:NumberPicker>
+
+
+    <View
+        android:layout_below="@id/totalHours"
+        android:background="@color/lightGrey"
+        android:layout_width = "match_parent"
+        android:layout_height="1dp"/>
+
+
+    <TextView
+        android:id="@+id/taskDueTimeLabel"
+        android:layout_below="@id/totalHours"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="55dp"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:text="I want to finish..."
+        android:textSize="18dp"
+        android:layout_height="wrap_content">
+    </TextView>
+
+    <TextView
+        android:layout_below="@id/totalHours"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="125dp"
+        android:layout_width="wrap_content"
+        android:text="days before"
+        android:textSize="18dp"
+        android:layout_height="wrap_content">
+    </TextView>
+
+    <android:NumberPicker
+        android:layout_below="@id/totalHours"
+        android:id="@+id/daysBeforeDue"
+        android:text="Days before"
+        android:layout_width="wrap_content"
+        android:layout_height = "150dp"
+        android:layout_marginLeft="55dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop = "40dp">
+    </android:NumberPicker>
+
+    <View
+        android:layout_below="@id/daysBeforeDue"
+        android:background="@color/lightGrey"
+        android:layout_width = "match_parent"
+        android:layout_height="1dp"/>
+
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_below="@+id/daysBeforeDue"
+        android:layout_height="wrap_content"
+        android:src="@drawable/calendar_small"/>
+
+    <!--work weekends? -->
+
+    <TextView
+        android:layout_below="@id/daysBeforeDue"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="55dp"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:text="I will finish in..."
+        android:textSize="18dp"
+        android:layout_height="wrap_content">
+    </TextView>
+
+    <TextView
+        android:layout_below="@id/daysBeforeDue"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="125dp"
+        android:layout_width="wrap_content"
+        android:text="sessions"
+        android:textSize="18dp"
+        android:layout_height="wrap_content">
+    </TextView>
+
+    <android:NumberPicker
+        android:layout_below="@id/daysBeforeDue"
+        android:id="@+id/taskNumber"
+        android:text="Sessions"
+        android:layout_width="wrap_content"
+        android:layout_height = "150dp"
+        android:layout_marginLeft="55dp"
+        android:layout_marginTop = "40dp">
+    </android:NumberPicker>
+
+    <View
+        android:layout_below="@id/taskNumber"
+        android:background="@color/lightGrey"
+        android:layout_width = "match_parent"
+        android:layout_height="1dp"/>
+
+        <TextView
+            android:layout_below="@id/taskNumber"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="55dp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:text="Work weekends?"
+            android:textSize="18dp"
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <LinearLayout
+            android:id="@+id/workWeekendsLayout"
+            android:layout_width="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@+id/taskNumber"
+            android:layout_marginTop="40dp"
+            android:layout_height="wrap_content">
+
+            <RadioGroup
+                android:id="@+id/workWeekends"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="55dp"
+                android:layout_height="wrap_content">
+                <RadioButton
+                    android:checked="true"
+                    android:layout_marginTop="15dp"
+                    android:id="@+id/workWeekendsYes"
+                    android:layout_width="wrap_content"
+                    android:textSize="18dp"
+                    android:layout_height="wrap_content"
+                    android:text="Yes..."/>
+
+                <RadioButton
+                    android:layout_marginTop="15dp"
+                    android:id="@+id/workWeekendsNo"
+                    android:layout_width="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:textSize="18dp"
+                    android:layout_height="wrap_content"
+                    android:text="Hell no"
+                    />
+            </RadioGroup>
+        </LinearLayout>
+
+        <Button
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:id="@+id/createButton"
+            android:layout_width="350dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/workWeekendsLayout"
+            android:text="Create"
+            android:layout_marginTop="15dp"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

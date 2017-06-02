@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/linearLayout1"
+    android:padding="16dp"
+    >
+
+    <TextView
+    android:id="@+id/title"
+    android:alpha="0"
+    android:layout_marginTop="70dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:textStyle="bold"
+    android:textSize="25dp"
+    android:gravity="center"
+    android:layout_centerHorizontal="true"
+    android:text="Splitter"
+    />
+
+    <TextView
+        android:id="@+id/desc"
+        android:layout_below="@+id/title"
+        android:alpha="0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="18dp"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:text="Breaking down your tasks"
+        />
+
+    <Button
+        android:layout_below="@+id/title"
+        android:layout_marginTop="250dp"
+        android:id="@+id/googleAPI"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_centerHorizontal="true"
+        android:alpha="0"
+        android:text="Login"/>
+
+    <ImageView
+        android:id="@+id/imgIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/calendar" />
+
+</RelativeLayout>
